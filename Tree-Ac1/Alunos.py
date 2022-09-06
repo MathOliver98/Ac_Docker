@@ -38,7 +38,7 @@ def gravarAluno():
 def listar():
   conn = mysql.connect()
   cursor = conn.cursor()
-  cursor.execute('select user_name, user_username, user_password from tbl_user')
+  cursor.execute('select nome_aluno, cpf_aluno, endereco_aluno from tbl_alunos')
   data = cursor.fetchall()
   conn.commit()
   return render_template('lista.html', datas=data)
