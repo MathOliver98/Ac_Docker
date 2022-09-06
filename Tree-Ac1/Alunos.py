@@ -9,7 +9,7 @@ app = Flask(__name__)
 # define o nome do user
 app.config['MYSQL_DATABASE_USER'] = 'root'
 # define a senha
-app.config['MYSQL_DATABASE_PASSWORD'] = 'mudar123'
+app.config['MYSQL_DATABASE_PASSWORD'] = '12345'
 # define o nome do DB
 app.config['MYSQL_DATABASE_DB'] = 'Alunos'
 # caso usando o docker, o ip precisar ser o da imagem do MySQL
