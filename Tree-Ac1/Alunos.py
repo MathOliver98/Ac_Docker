@@ -29,7 +29,7 @@ def gravarAluno():
   if nome and cpf and endereco:
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('insert into tbl_user (user_name, user_username, user_password) VALUES (%s, %s, %s)', (nome, cpf, endereco))
+    cursor.execute('insert into tbl_alunos (nome_aluno, cpf_aluno, endereco_aluno) VALUES (%s, %s, %s)', (nome, cpf, endereco))
     conn.commit()
   return render_template('index.html')
 
