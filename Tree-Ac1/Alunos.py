@@ -5,10 +5,15 @@ from flaskext.mysql import MySQL
 mysql = MySQL()
 app = Flask(__name__)
 
-# MySQL configurations
+# Configurações para o MySQL
+# define o nome do user
 app.config['MYSQL_DATABASE_USER'] = 'root'
+# define a senha
 app.config['MYSQL_DATABASE_PASSWORD'] = 'mudar123'
-app.config['MYSQL_DATABASE_DB'] = 'teste'
+# define o nome do DB
+app.config['MYSQL_DATABASE_DB'] = 'Alunos'
+# caso usando o docker, o ip precisar ser o da imagem do MySQL
+# docker network inspect bridge
 app.config['MYSQL_DATABASE_HOST'] = '172.17.0.2'
 mysql.init_app(app)
 
@@ -16,8 +21,8 @@ mysql.init_app(app)
 def main():
     return render_template('index.html')
 
-@app.route('/gravar', methods=['POST','GET'])
-def gravar():
+@app.route('/gravarAluno', methods=['POST','GET'])
+def gravarAluno():
   nome = request.form['nome']
   cpf = request.form['cpf']
   endereco = request.form['endereco']
