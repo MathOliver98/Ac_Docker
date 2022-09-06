@@ -24,12 +24,12 @@ def main():
 @app.route('/gravarAluno', methods=['POST','GET'])
 def gravarAluno():
   Nome = request.form['Nome']
-  CPF = request.form['CPF']
+  CPFaluno = request.form['CPF']
   Endereco = request.form['Endereco']
   if Nome and CPF and Endereco:
     conn = mysql.connect()
     cursor = conn.cursor()
-    cursor.execute('insert into tbl_Alunos (user_name, user_cpf, user_address) VALUES (%s, %s, %s)', (Nome, CPF, Endereco))
+    cursor.execute('insert into tbl_Alunos (user_name, user_cpf, user_address) VALUES (%s, %s, %s)', (Nome, CPFaluno, Endereco))
     conn.commit()
   return render_template('index.html')
 
